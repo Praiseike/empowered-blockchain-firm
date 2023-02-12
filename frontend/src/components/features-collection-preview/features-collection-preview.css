@@ -1,0 +1,11 @@
+.features-parent{
+/*	border:2px solid orange ;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top:30px;
+	padding-bottom: 30px;
+	border-radius: 6px;
+}
