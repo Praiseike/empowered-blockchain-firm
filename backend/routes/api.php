@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\RegisteredUserController;
+use App\Http\Controllers\Api\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::get('/', function () {
+    return ['Empowered Blockchain firm API' => '1.0.0'];
 });
+
+
+Route::post('/register',[RegisteredUserController::class,'register']);
+Route::post('/login',[LoginController::class,'login']);
+
+

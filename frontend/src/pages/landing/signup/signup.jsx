@@ -9,7 +9,7 @@ function Signup() {
     email: "",
     username: "",
     password: "",
-    confirmPassword: "",
+    password_confirmation: "",
   });
 
   function handleChange({ target }) {
@@ -43,7 +43,7 @@ function Signup() {
     }
 
     // Validate username
-    if (name === "confirmPassword") {
+    if (name === "password_confirmation") {
       if (!value) setErrors({ ...errors, [name]: "Confirm your password" });
       else if (userForm.password !== value)
         setErrors({ ...errors, [name]: "Password does not match" });
@@ -79,7 +79,7 @@ function Signup() {
       >
         <FormInput
           type="text"
-          name="username"
+          name="name"
           label="username"
           onChange={handleChange}
           value={userForm.username}
@@ -106,11 +106,11 @@ function Signup() {
 
         <FormInput
           type="password"
-          name="confirmPassword"
+          name="password_confirmation"
           label="confirm password"
           onChange={handleChange}
-          value={userForm.confirmPassword}
-          error={errors?.confirmPassword}
+          value={userForm.password_confirmation}
+          error={errors?.password_confirmation}
         />
       </SignInSignUpContainer>
     </>
