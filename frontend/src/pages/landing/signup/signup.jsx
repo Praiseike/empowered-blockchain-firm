@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axiosClient from '../../../services/axios';
+
 import { SignInSignUpContainer, SEO, FormInput } from "../../../components";
 // import axios from '../../../api/axios';
 
@@ -56,6 +58,16 @@ function Signup() {
 
   function submitForm() {
     console.log(userForm);
+    const config = {
+      headers: {
+        accept:'application/json'
+      }
+    }
+
+    axiosClient.post('/api/register',userForm,config)
+      .then(response => {
+        console.log(response);
+      })
   }
 
   return (
@@ -79,7 +91,7 @@ function Signup() {
       >
         <FormInput
           type="text"
-          name="name"
+          name="username"
           label="username"
           onChange={handleChange}
           value={userForm.username}

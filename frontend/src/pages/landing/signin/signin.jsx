@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axiosClient from '../../../services/axios';
+
+import { Link,useNavigate } from "react-router-dom";
 import GlobalStyles from "../../../globalStyles/globalStyles";
 import { SignInSignUpContainer, SEO, FormInput } from "../../../components";
 
@@ -10,6 +12,7 @@ function Signin() {
     password: "",
   });
 
+  const navigate = useNavigate();
   function handleChange({ target }) {
     const { name, value } = target;
 
@@ -38,8 +41,24 @@ function Signin() {
   }
 
   function submitForm() {
-    console.log(userForm);
+    const config = {
+      headers: {
+        accept: "application/json",
+      }
+    }
+    axiosClient.post('/api/login',userForm,config)
+        .then(({data}) => {
+          console.log(data);
+          if(data.status==='success')
+          {
+            axiosClient.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
+            window.axiosClient = axiosClient;
+            navigate('/');
+          }
+        })
+
   }
+
 
   return (
     <>

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\RegisterUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +16,8 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', function () {
-    return ['Empowered Blockchain firm API' => '1.0.0'];
+
+Route::middleware('auth:sanctum')->get('/users',function (Request $request){
+    return $request->user();
 });
-
-
-Route::post('/register',[RegisteredUserController::class,'store']);
-Route::post('/login',[AuthenticatedSessionController::class,'store']);
-require __DIR__.'/auth.php';
-    
+// require __DIR__.'/auth.php';
