@@ -1,0 +1,18 @@
+.dropdown{
+	position: absolute;
+	width: 14rem;
+	transition: all 1s;
+	z-index: 100;
+	background-color: white;
+	margin-top: 13px;
+}
+
+.dropdown-list li{
+	cursor: pointer;
+}
+
+.dropdown-list li:hover{
+	background-color: #f0f0ff;
+}
+
+

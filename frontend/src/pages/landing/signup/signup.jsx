@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+import {useNavigate} from 'react-router-dom';
+
 import axiosClient from '../../../services/axios';
 
 import { SignInSignUpContainer, SEO, FormInput } from "../../../components";
 // import axios from '../../../api/axios';
+import useAuthContext from '../../../services/Auth/useAuthContext';
 
 
 function Signup() {
@@ -13,6 +16,10 @@ function Signup() {
     password: "",
     password_confirmation: "",
   });
+
+  const { user, setUser } = useAuthContext();
+
+  const navigate = useNavigate();
 
   function handleChange({ target }) {
     const { name, value } = target;
@@ -65,9 +72,19 @@ function Signup() {
     }
 
     axiosClient.post('/api/register',userForm,config)
-      .then(response => {
-        console.log(response);
+      .then(({data})=> {
+        if(data.status === 'success'){
+          axiosClient.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
+          window.axiosClient = axiosClient;
+          setUser(data.user);
+          localStorage.setItem('user',JSON.stringify(data.user));
+          localStorage.setItem('token',data.token);
+          navigate('/');
+        }
       })
+      .catch( error => {
+        console.log(error.message);
+      });
   }
 
   return (

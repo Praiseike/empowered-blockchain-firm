@@ -31,39 +31,45 @@ class AuthController extends Controller
                 'status'=>'success',
                 'user'=>Auth::user(),
                 'token'=>Auth::user()->createToken('api_token')->plainTextToken,
-                'token_type'=>'Bearer'
             ]);
         }else{
-            return response('Unauthorized request',401);
+            return response()->json(['status'=>'failure','message'=>'invalid login detals'],401);
         }
     }
 
     public function register(Request $request){
-        $request->validate([
+        $validated = $request->validate([
             'username' => 'required | string | max:255',
             'email' => 'email | required | unique:users',
             'password' => 'required | confirmed',
         ]);
 
-        $user = User::create([
-            'name' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if($validated){
+            $user = User::create([
+                'name' => $request->username,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        event(new Registered($user));
+            event(new Registered($user));
 
-        return response()->json([
-            'status'=>'success',
-            'user'=>$user,
-            'token'=>$user->createToken('api_token')->plainTextToken,
-            'token_type'=>'Bearer'
-        ]);
+            return response()->json([
+                'status'=>'success',
+                'user'=>$user,
+                'token'=>$user->createToken('api_token')->plainTextToken,
+            ]);
+        }
+
+        return response()->json($user,200);
     }
 
 
     public function logout(Request $request){
         // return $request->all();
         $request->user()->tokens()->delete();
+        return response()->json([
+            'status'=>'success',
+            'message'=>'User logged out successfuly'
+        ]);
     }
 }

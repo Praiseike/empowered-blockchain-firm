@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './features-collection-item.css';
 
 function FeaturesCollectionItem({feature}) {
@@ -20,10 +20,10 @@ function FeaturesCollectionItem({feature}) {
   )
 }
 
-FeaturesCollectionItem.propTypes = {
-    icon: PropTypes.node.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired
-}
+// FeaturesCollectionItem.propTypes = {
+    // icon: PropTypes.node.isRequired,
+    // title: PropTypes.string.isRequired,
+    // content: PropTypes.string.isRequired
+// }
 
 export default FeaturesCollectionItem

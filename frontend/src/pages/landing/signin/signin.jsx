@@ -7,6 +7,7 @@ import { SignInSignUpContainer, SEO, FormInput } from "../../../components";
 
 function Signin() {
   const [errors, setErrors] = useState({});
+
   const [userForm, setUserForm] = useState({
     email: "",
     password: "",
@@ -46,6 +47,7 @@ function Signin() {
         accept: "application/json",
       }
     }
+
     axiosClient.post('/api/login',userForm,config)
         .then(({data}) => {
           console.log(data);
@@ -53,9 +55,13 @@ function Signin() {
           {
             axiosClient.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
             window.axiosClient = axiosClient;
+            localStorage.setItem('user',JSON.stringify(data.user));
             navigate('/');
           }
         })
+        .catch( error => {
+          setErrors({ ...errors, password: error.response.data.message})
+        });
 
   }
 

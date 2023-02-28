@@ -1,13 +1,18 @@
-import React from "react";
+import { useEffect,React } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import navigationLinks from "../../constants/navigation";
 import Button from "../button/button";
 import MenuItem from "../menu-item/menu-item";
 import Logo from "../logo/logo";
+import useAuthContext from '../../services/Auth/useAuthContext';
 
 function Navigation() {
   const navigate = useNavigate();
-
+  const { user,setUser } = useAuthContext();
+  useEffect(() => {
+    console.log("Navigation useEffect: ",user);
+  });
+  
   return (
     <nav className="navigation py-6 px-6">
       {/* Navigation Wrapper */}
@@ -31,14 +36,17 @@ function Navigation() {
         </div>
 
         {/* Navigation Action Buttons */}
-        <div className="navigation_a flex gap-1">
-          <Button variant="transparent" onClick={() => navigate("/login")}>
-            Log in
-          </Button>
-          <Button variant="main" onClick={() => navigate("/register")}>
-            Sign in
-          </Button>
-        </div>
+        { !user ?
+          <div className="navigation_a flex gap-1">
+            <Button variant="transparent" onClick={() => navigate("/login")}>
+              Log in
+            </Button>
+            <Button variant="main" onClick={() => navigate("/register")}>
+              Sign in
+            </Button>
+          </div>
+          :<strong>{user.name}</strong>
+        }
       </div>
     </nav>
   );

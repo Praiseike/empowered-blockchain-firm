@@ -18,6 +18,9 @@ use App\Http\Controllers\Api\AuthController;
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
 
+Route::get('error',function () {
+    return response()->json(['status'=>'unauthorized','message'=>'user needs to login']);
+})->name('unauthorized');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout',[AuthController::class,'logout']);
@@ -29,7 +32,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 Route::get('/',function () {
-    return "";
+    return view('api');
 });
 
 
