@@ -9,10 +9,10 @@ function Dropdown({ items,setDropDown }) {
     navigate(route)
   }
   const listItems = items.map((item,index) => {
-    return <li onClick={() => onListClick(item.route)}className="py-4 block px-4" key={index}>{item.name}</li>
+    return <li onClick={() => onListClick(item.route)} className="py-4 block px-4" key={index}>{item.name}</li>
   });
   return (
-    <div className="dropdown divide-y divide-grey-100 w-44 shadow p-24">
+    <div className="dropdown divide-y divide-grey-100 w-44 shadow">
       <ul className="dropdown-list">
         {listItems}
       </ul>      

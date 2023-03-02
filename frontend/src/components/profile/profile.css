@@ -1,7 +1,6 @@
 .profile{
 /*	border: 1px solid grey;*/
 	height: 50px;
-	width: 170px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -35,7 +34,12 @@
 }
 
 .profile-dropdown{
-	width: 17rem;
-	height: auto;
-	
+	margin-left: -90px;
+	cursor: default;
+	font-size: 17px;
 }
+
+.dropdown-list-item{
+	cursor: pointer;
+}
+
