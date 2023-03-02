@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 function SEO({ title, description, name, type }) {
-  console.log(name, type);
+  // console.log(name, type);
 
   return (
     <Helmet>

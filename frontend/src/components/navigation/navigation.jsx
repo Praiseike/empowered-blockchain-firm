@@ -5,14 +5,12 @@ import Button from "../button/button";
 import MenuItem from "../menu-item/menu-item";
 import Logo from "../logo/logo";
 import useAuthContext from '../../services/Auth/useAuthContext';
+import Profile from '../profile/profile';
 
 function Navigation() {
   const navigate = useNavigate();
-  const { user,setUser } = useAuthContext();
-  useEffect(() => {
-    console.log("Navigation useEffect: ",user);
-  });
-  
+  const { userProfile } = useAuthContext();
+  console.log("Profile from navigation",userProfile);
   return (
     <nav className="navigation py-6 px-6">
       {/* Navigation Wrapper */}
@@ -36,7 +34,7 @@ function Navigation() {
         </div>
 
         {/* Navigation Action Buttons */}
-        { !user ?
+        { !userProfile ?
           <div className="navigation_a flex gap-1">
             <Button variant="transparent" onClick={() => navigate("/login")}>
               Log in
@@ -45,7 +43,7 @@ function Navigation() {
               Sign in
             </Button>
           </div>
-          :<strong>{user.name}</strong>
+          : <Profile />
         }
       </div>
     </nav>

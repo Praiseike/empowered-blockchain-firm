@@ -9,7 +9,7 @@ function FeaturesCollectionPreview(features) {
     list.push(<FeaturesCollectionItem key={index} feature={item}/>);
   })
   return (
-    <div className="shadow text-blue-dark features-parent">
+    <div className="text-blue-dark features-parent">
       {list}
     </div>
 

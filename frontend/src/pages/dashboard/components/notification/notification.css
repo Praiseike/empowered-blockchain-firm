@@ -1,0 +1,15 @@
+.notification-panel{
+	width: 400px;
+	margin-left: -29%;
+	margin-top: 120px;
+	padding: 20px;
+	border-radius: 8px;
+	position: absolute;
+	background-color: white;
+	z-index: 1;
+	color: #717171;
+}
+
+.notification-panel p{
+	font-size: 12px;
+}

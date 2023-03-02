@@ -1,3 +1,5 @@
 export const getUser = () => {
-	return JSON.parse(localStorage.getItem('user'));
+	const data = JSON.parse(localStorage.getItem('user'))
+	console.log("get user was called with data",data);
+	return data;
 };

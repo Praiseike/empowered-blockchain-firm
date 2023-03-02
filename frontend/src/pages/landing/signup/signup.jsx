@@ -4,12 +4,14 @@ import {useNavigate} from 'react-router-dom';
 import axiosClient from '../../../services/axios';
 
 import { SignInSignUpContainer, SEO, FormInput } from "../../../components";
-// import axios from '../../../api/axios';
 import useAuthContext from '../../../services/Auth/useAuthContext';
+
+
 
 
 function Signup() {
   const [errors, setErrors] = useState({});
+  const { userProfile, setUserProfile } = useAuthContext();
   const [userForm, setUserForm] = useState({
     email: "",
     username: "",
@@ -17,7 +19,6 @@ function Signup() {
     password_confirmation: "",
   });
 
-  const { user, setUser } = useAuthContext();
 
   const navigate = useNavigate();
 
@@ -64,7 +65,6 @@ function Signup() {
   }
 
   function submitForm() {
-    console.log(userForm);
     const config = {
       headers: {
         accept:'application/json'
@@ -76,14 +76,15 @@ function Signup() {
         if(data.status === 'success'){
           axiosClient.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
           window.axiosClient = axiosClient;
-          setUser(data.user);
           localStorage.setItem('user',JSON.stringify(data.user));
           localStorage.setItem('token',data.token);
+          setUserProfile(data.user);
           navigate('/');
         }
       })
       .catch( error => {
         console.log(error.message);
+        setErrors({ ...errors, password_confirmation : error.message })
       });
   }
 

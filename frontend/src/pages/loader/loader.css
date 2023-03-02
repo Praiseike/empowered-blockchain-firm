@@ -1,0 +1,30 @@
+.loader-container{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	position: absolute;
+	backdrop-filter: blur(10px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.default{
+	
+}
+
+.loader{
+	width: 40px;
+	height: 40px;
+/*	border: 1px solid grey;*/
+}
+
+.loader img{
+	width: 100%;
+	height: 100%;
+}

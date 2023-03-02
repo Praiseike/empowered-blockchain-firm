@@ -6,7 +6,7 @@ function FeaturesCollectionItem({feature}) {
 
   const {icon,title,content} = feature;
   return (
-    <div className="feature-container">
+    <div className="feature-container shadow">
       <div className="feature-header">
         <div className="feature-image text-blue-800">
           {React.createElement(icon)} 

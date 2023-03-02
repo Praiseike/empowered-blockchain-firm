@@ -12,7 +12,7 @@ function Dropdown({ items,setDropDown }) {
     return <li onClick={() => onListClick(item.route)}className="py-4 block px-4" key={index}>{item.name}</li>
   });
   return (
-    <div class="dropdown divide-y divide-grey-100 w-44 shadow p-24">
+    <div className="dropdown divide-y divide-grey-100 w-44 shadow p-24">
       <ul className="dropdown-list">
         {listItems}
       </ul>      

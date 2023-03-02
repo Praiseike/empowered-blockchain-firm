@@ -18,7 +18,7 @@ import HeroImage3 from "../../assets/images/hero/programming.png";
 function Hero() {
   const navigate = useNavigate();
   return (
-    <section className="mt-5 py-3 px-3.5 w-95 mx-auto grid grid-cols-hero gap-x-8">
+    <section className="mt-5 py-3 w-[85%] mx-auto grid grid-cols-hero gap-x-8">
       <div className="pr-8 mt-28">
         <h1 className="text-6.5xl text-blue-dark leading-none font-roboto font-black mb-4 tracking-tight">
           Learn the latest in tech and <span >blockchain</span>

@@ -1,0 +1,13 @@
+.message{
+	border-radius: 7px;
+	padding: 10px;
+	background-color: #f3f3f3;
+	color: #616161;
+}
+.message a{
+	color: blue;
+}
+.success{
+
+}
+

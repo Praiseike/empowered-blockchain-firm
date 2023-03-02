@@ -6,11 +6,10 @@ import GlobalStyles from '../globalStyles/globalStyles';
 import MissonImage from '../assets/images/pics/puzzle.jpg';
 import VisionImage from '../assets/images/pics/laptops.jpg';
 import {
-    BsCalendarRangeFill,
-    BsFillMenuButtonWideFill
+    GiSpeedometer
+} from 'react-icons/gi';
 
-} from 'react-icons/bs';
-
+import {SlOrganization , SlBadge} from 'react-icons/sl';
 
 export const missionContent = {
     headline: "mission",
@@ -31,23 +30,18 @@ export const visionContent = {
 
 export const featuresContent = [
     {
-        icon: BsFillMenuButtonWideFill,
-        title: "Well Structured Curriculum",
-        content: "well-structured lessons with challenging, measurable objectives and appropriate student engagement strategies, pacing, sequence, activities, materials, resources, technologies, and grouping."
+        icon: GiSpeedometer,
+        title: "Self Paced Courses",
+        content: "A well packaged list of topics and resources that will help you in your journey in becoming a blockchain expert"
     },
     {
-        icon: BsCalendarRangeFill,
-        title: "Mainstream Technologies",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure omnis nobis unde dolorum nemo sequi officiis tempora vel architecto officiis quis quam."
+        icon: SlBadge,
+        title: "Meet amazing mentors",
+        content: "Enrolled Students get the opportunity to be mentored by experienced mentors in the field."
     },
     {
-        icon: BsFillMenuButtonWideFill,
+        icon: SlOrganization,
         title: "Clear and Concise Content",
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi voluptates est placeat. Tempora vel architecto officiis quis quam."
     },
-    {
-        icon: BsFillMenuButtonWideFill,
-        title: "100% Cost Effective",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi voluptates est placeat. Tempora vel architecto officiis quis quam."
-    }
 ];
