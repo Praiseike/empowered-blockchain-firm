@@ -3,3 +3,4 @@ export const getUser = () => {
 	console.log("get user was called with data",data);
 	return data;
 };
+

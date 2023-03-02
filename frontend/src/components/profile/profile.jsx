@@ -22,7 +22,7 @@ function Profile(){
 		<>
 			<div className="profile">
 				<div className="profile-info">
-					<span className="profile-name"></span>
+					<span className="profile-name">{userProfile.name}</span>
 				</div>
 				<div className="flex items-center">			
 					<div className="avatar">
