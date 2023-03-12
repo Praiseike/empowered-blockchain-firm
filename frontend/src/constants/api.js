@@ -1,5 +1,6 @@
 const Api = {
-	base: "http://localhost:8000",
+	// base: "https://api.digi-essentials.com",
+	base: 'http://localhost:8000',
 	login: "/login",
 	register: "/register",
 	forgot_password: "/forgot-password"

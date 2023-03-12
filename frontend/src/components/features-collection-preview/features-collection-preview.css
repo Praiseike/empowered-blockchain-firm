@@ -1,11 +1,10 @@
-.features-parent{
-/*	border:2px solid orange ;*/
+/*.features-parent{
+	border:2px solid orange ;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
 	align-items: center;
-	border-radius: 6px;
 	width: 100%;
 	margin: auto;
-}
+}*/

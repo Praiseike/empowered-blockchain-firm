@@ -37,18 +37,16 @@ const Form = () => {
   );
 }
 
-
-
 const Footer = () => {
   const iconStyle = {color: "white",fontSize: "30px"};
   return ( 
-    <footer className="bg-[#000] pt-20">
-      <section className="footer-section">
-        <div className="grid-container">
-          <div className="logo-area">
-            <div className="logo-container">
-              <img src={logo} alt="company logo" className="w-14 h-full" />
-              <div className="socials">
+    <footer className="bg-[#000]">
+      <section className="footer-section py-20">
+        <div className="flex items-center px-[3rem] w-full flex-col sm:md:flex-row justify-between">
+          <div className="logo-area h-full w-full mb-12 sm:md:w-[20%]">
+            <div className="block w-full h-auto">
+              <img src={logo} alt="company logo" className="h-full" />
+              <div className="flex mt-3 flex-row items-center justify-around">
                 <div className="socials-link">
                   <BsWhatsapp className="text-white" style={iconStyle}/>
                 </div>
@@ -64,36 +62,36 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="nav-area">
-            <div className="nav-links">
-              <span className="nav-header">Support</span>
+          <div className="flex flex-col text-center md:sm:text-start md:sm:flex-row w-full justify-around">
+            <div className="nav-links mb-4 flex flex-col">
+              <span className="nav-header text-white">Support</span>
               <a className="nav-link" href="/somewhere">Contact Us</a>
               <a className="nav-link" href="/somewhere">FAQ</a>
               <a className="nav-link" href="/somewhere">Downloads</a>
               <a className="nav-link" href="/somewhere">About Us</a>
               <a className="nav-link" href="/somewhere">Our Services</a>
             </div>
-            <div className="nav-links">
-              <span className="nav-header">Company</span>
+            <div className="nav-links mb-4 flex flex-col">
+              <span className="nav-header text-white">Company</span>
               <a className="nav-link" href="/somewhere">About Us</a>
               <a className="nav-link" href="/somewhere">Our Mission</a>
               <a className="nav-link" href="/somewhere">Our Vision</a>
               <a className="nav-link" href="/somewhere">Meet the team</a>
             </div>
             <div className="nav-form">
-              <span className="nav-header">Sign up on our news letter></span>
+              <span className="nav-header">Sign up on our news letter</span>
               <Form/>
             </div>
           </div>
         </div>
       </section>
+      <hr className="bg-white-200"/>
       <div className="footer-note text-center">
-        <p className="text-white">copyright &copy; Empowered Blockchain Firm 2021 - 2023</p>
+        <p className="text-white text-grey">copyright &copy; Empowered Blockchain Firm 2021 - 2023</p>
       </div>
     </footer>
   );
 }
-
 
 
 

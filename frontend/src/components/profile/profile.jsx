@@ -2,6 +2,8 @@ import './profile.css';
 import {useState} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
 import useAuthContext from '../../services/Auth/useAuthContext';
+import logoutUser from '../../services/Auth/userAuth';
+
 
 import { AiOutlineCaretDown } from "react-icons/ai";
 
@@ -18,21 +20,33 @@ const options = [
 ]
 
 function ProfileDropDown({user}){
+	const [userProfile, setUserProfile] = user;
+	function logout() {
+		logoutUser(setUserProfile)
+	}
+
 	return (
 		<div className="shadow profile-dropdown bg-white w-[18rem] rounded absolute top-20 p-4">
-			<p>{user.email}</p>
+			{/*<p>{user.email}</p>*/}
 			<hr className="my-2"/>
 			<ul className="profile-dropdown-list">
 				{
 					options.map((item,index) => {
 						return (
-							<li className="dropdown-list-item my-2">
+							<li key={index} className="dropdown-list-item my-2">
 								<Link to={item.route} >{item.name}</Link>									
 							</li>
 						);
 					})
 				}
-				<li className="dropdown-list-item"><span style={{color: "red"}}>Log Out</span></li>
+				<li className="dropdown-list-item">
+					<span 
+						style={{color: "red"}}
+						onClick={logout}
+					>
+						Log Out
+					</span>
+					</li>
 			</ul>
 
 		</div>
@@ -41,9 +55,8 @@ function ProfileDropDown({user}){
 
 function Profile(){
 	const navigate = useNavigate();
-	const { userProfile } = useAuthContext()
+	const { userProfile,setUserProfile } = useAuthContext()
 	const [ showDropdown, setShowDropdown ] = useState(false);
-
 	return (
 		<>
 			<div>
@@ -63,7 +76,7 @@ function Profile(){
 					</div>
 				</div>
 					{showDropdown?
-						<ProfileDropDown user={userProfile}/>
+						<ProfileDropDown user={[userProfile,setUserProfile]}/>
 						:
 						null
 					}

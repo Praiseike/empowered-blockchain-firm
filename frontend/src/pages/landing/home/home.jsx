@@ -1,6 +1,7 @@
 import React from "react";
 import { missionContent, visionContent, featuresContent } from "../../../constants/home";
-import { Hero, ZPattern, Features } from "../../../components";
+import { Team, Testimonials, Hero, ZPattern, Features } from "../../../components";
+
 
 function Home() {
   return (
@@ -16,6 +17,12 @@ function Home() {
 
       {/* Mission Section */}
       <ZPattern {...missionContent} type="mission" />
+
+      {/* Meet the team section */}
+      <Team />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
     </>
   );

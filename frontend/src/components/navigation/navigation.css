@@ -1,0 +1,10 @@
+.navigation__links{
+
+}
+
+@media screen only(max-width: 500px){
+	.navigation__links	{
+		padding-top: 100px;
+		background-color: orange!important;
+	}
+}

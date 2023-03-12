@@ -1,4 +1,4 @@
-footer{
+/*footer{
 	padding-top:2rem;
 }
 
@@ -18,7 +18,6 @@ footer{
 
 .grid-container > div{
 	height: auto;
-/*	border: 1px solid #414141;*/
 }
 
 .logo-container img{
@@ -46,7 +45,6 @@ footer{
 .nav-area > div{
 	float: left;
 	margin-right: 40px;
-/*	border: 1px solid #414141;*/
 	height: auto;
 }
 
@@ -62,7 +60,6 @@ footer{
 
 .nav-form{
 	float:right;
-/*	border: 1px solid #414141;*/
 	margin-left: 100px;
 }
 
@@ -87,4 +84,4 @@ footer{
 	height: 100%;
 	padding-top:30px;
 	padding-bottom:10px;
-}
+}*/

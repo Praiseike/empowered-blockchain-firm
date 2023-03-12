@@ -9,9 +9,8 @@ function MenuItem({ title, route, submenu }) {
   const showSubMenu = () => {
     setDropDown(!dropDown)
   }
-
   return (
-    <li className="menu-item relative leading-none">
+    <li className="menu-item relative block leading-none">
       {submenu ? (
         <>
           <Link

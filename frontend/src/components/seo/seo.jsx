@@ -17,6 +17,7 @@ function SEO({ title, description, name, type }) {
       <meta name="twitter:card" content={type} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </Helmet>
   );
 }

@@ -1,13 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "../button/button";
 import GlobalStyles from "../../globalStyles/globalStyles";
 import Logo from "../logo/logo";
+import spinnerImg from '../../assets/images/spinner/white-spinner.gif';
+
+function Spinner(){
+  return (
+    <div className="h-100 w-[30px] mx-auto">
+      <img
+        src={spinnerImg}
+        alt="spinner image"
+      />
+    </div>
+  );
+}
 
 function SignInSignUpContainer({
   children,
   heading = "",
+  loading = false,
   subHeading = "",
   submitForm = (f) => f,
   buttonText = "",
@@ -17,7 +30,6 @@ function SignInSignUpContainer({
 
   function postRequest(e) {
     e.preventDefault();
-
     submitForm();
   }
 
@@ -55,9 +67,9 @@ function SignInSignUpContainer({
               type="submit"
               role="submit"
               variant="main"
-              styles="w-full py-2.5"
+              styles="w-full h-[50px]"
             >
-              {buttonText}
+              {!loading ? buttonText : <Spinner/>}
             </Button>
           </form>
 

@@ -6,6 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'Times Roman', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif', 'Times Roman']
+      },
+      width: {
+        95: "95%",
+        "form": "28rem"
+      },
       colors: {
         blue: "#228be6",
         "blue-dark": "#021a30", /*#03274a, #031c34*/
@@ -23,14 +31,6 @@ module.exports = {
         "red-700": "#f03e3e",
         "red-600": "#fa5252",
         "red-500": "#ff6b6b"
-      },
-      fontFamily: {
-        poppins: ['Poppins', 'Times Roman', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif', 'Times Roman']
-      },
-      width: {
-        95: "95%",
-        "form": "28rem"
       },
       gap: {
         "0.7": "0.2rem"

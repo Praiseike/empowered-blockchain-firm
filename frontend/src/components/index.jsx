@@ -7,7 +7,8 @@ import NoMatch from "./no-match/no-match";
 import FormInput from "./form-input/form-input";
 import SignInSignUpContainer from "./signin-signup-container/signin-signup-container";
 import Features from "./features/features";
-
+import Testimonials from "./testimonials/testimonials";
+import Team from "./team/team";
 export {
   SEO,
   Navigation,
@@ -18,4 +19,6 @@ export {
   FormInput,
   SignInSignUpContainer,
   Features,
+  Testimonials,
+  Team
 };

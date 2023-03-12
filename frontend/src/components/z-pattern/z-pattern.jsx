@@ -16,12 +16,12 @@ function ZPattern({
 
   return (
     <section
-      className="w-[85%] mx-auto my-[8rem] grid grid-cols-2 gap-x-14"
+      className="w-[85%] mx-auto my-[8rem] sm:md:grid sm:md:grid-cols-2 gap-x-14"
       role="article"
     >
       <div
         className={`content relative flex flex-col mt-5 z-50 ${
-          patternIsInverse ? "order-2" : ""
+          patternIsInverse ? "order-1 sm:md:order-2" : ""
         }`}
       >
         {/* Display Pattern */}
@@ -67,7 +67,7 @@ function ZPattern({
 
       <figure
         className={`h-[19rem] rounded-lg overflow-hidden ${
-          patternIsInverse ? "order-1" : ""
+          patternIsInverse ? "sm:md:order-1 order-2" : ""
         }`}
       >
         <img

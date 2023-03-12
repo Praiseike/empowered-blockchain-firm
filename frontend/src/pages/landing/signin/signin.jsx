@@ -10,6 +10,7 @@ import useAuthContext from '../../../services/Auth/useAuthContext';
 function Signin() {
   const [errors, setErrors] = useState({});
   const { userProfile, setUserProfile } = useAuthContext();
+  const [ loading, setLoading ] = useState(false);
   const [userForm, setUserForm] = useState({
     email: "",
     password: "",
@@ -44,6 +45,7 @@ function Signin() {
   }
 
   function submitForm() {
+    setLoading(true);
     const config = {
       headers: {
         accept: "application/json",
@@ -63,6 +65,7 @@ function Signin() {
           }
         })
         .catch( error => {
+          setLoading(false);
           setErrors({ ...errors, password: error.response.data.message})
         });
 
@@ -87,6 +90,7 @@ function Signin() {
           route: "/register",
         }}
         submitForm={submitForm}
+        loading={loading}
       >
         <FormInput
           type="email"

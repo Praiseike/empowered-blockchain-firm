@@ -16,7 +16,7 @@ const ComingSoon = lazy(() => import("../coming_soon/coming_soon"));
 
 function Landing() {
   return (
-    <>
+    <div className="bg-white dark:bg-slate-900">
       <SEO
         title="Home | Empowered Blockchain"
         description="We educate on the latest blockchain and tech related topics."
@@ -28,7 +28,7 @@ function Landing() {
 
       <Suspense fallback={<Loader/>}>
         <Routes>
-          <Route index element={<Home className="dark bg-white dark:bg-slate-800" />} />
+          <Route index element={<Home className="bg-white" />} />
           <Route path="/blog" element={<ComingSoon />} />
           <Route path="/cohort" element={<ComingSoon />} />
           {/*<Route path="/blog" element={<Blog />} />*/}
@@ -37,7 +37,7 @@ function Landing() {
       </Suspense>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

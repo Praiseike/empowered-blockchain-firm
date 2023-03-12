@@ -9,10 +9,11 @@ function FeaturesCollectionPreview(features) {
     list.push(<FeaturesCollectionItem key={index} feature={item}/>);
   })
   return (
-    <div className="text-blue-dark features-parent">
-      {list}
-    </div>
-
+    <>
+      <div className="text-dark flex justify-center items-center flex-wrap flex-row">
+        {list}
+      </div>
+    </>
   )
 }
 

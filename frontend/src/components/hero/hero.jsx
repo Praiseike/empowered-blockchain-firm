@@ -18,22 +18,23 @@ import HeroImage3 from "../../assets/images/hero/programming.png";
 function Hero() {
   const navigate = useNavigate();
   return (
-    <section className="mt-5 py-3 w-[85%] mx-auto grid grid-cols-hero gap-x-8">
-      <div className="pr-8 mt-28">
-        <h1 className="text-6.5xl text-blue-dark leading-none font-roboto font-black mb-4 tracking-tight">
-          Learn the latest in tech and <span >blockchain</span>
+    <section className="mt-5 py-3 w-[85%] mx-auto flex sm:md:grid grid-cols-hero gap-x-8">
+      <div className="sm:md:pr-8 sm:md:mt-[4rem] w-100 ">
+        <h1 className="text-[2.4rem] dark:text-slate-200 sm:md:text-6.5xl text-blue-dark leading-none font-roboto font-black mb-4 tracking-tight">
+          {/*Learn the latest in tech and <span className="text-blue-400">blockchain</span>*/}
+          Welcome <br/>to Empowered Blockchain Firm.
         </h1>
         <p className="text-[1.06rem] mb-5 text-gray-600">
-          Are you a newbie when it comes to Blockchain Technology and you are passionate about technology as a whole and want to learn more? Or are you looking for career options related to blockchain technology? Sign up now to get started
+          Learn the latest in blockchain and cryptocurrency technology and other crypto related skills one might need to get started in the world of blockchain technology. Sign up now to get started
         </p>
         <button 
-          className="bg-gradient-to-r from-blue to-blue-700 text-white shadow rounded-lg py-2.5 px-6 text-[32px]"
+          className="bg-gradient-to-r from-blue to-blue-700 text-white shadow rounded py-2 px-4 text-[24px]"
           onClick={() => navigate("/register")}
           >Sign up Now</button>
       </div>
 
       {/* Hero Image */}
-      <div className="image grid grid-cols-2 gap-x-2.5">
+      <div className="image grid grid-cols-2 gap-x-2.5 hidden md:grid sm:grid">
         <div className="first mt-8 grid gap-y-2">
           <blockquote className="w-full h-60 rounded overflow-hidden">
             <img
